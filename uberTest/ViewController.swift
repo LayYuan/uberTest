@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var driverLabel: UILabel!
     @IBOutlet weak var riderLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
@@ -25,8 +25,51 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     @IBAction func topTapped(_ sender: Any) {
+        
+        if emailTextField.text == "" || passwordTextField.text == "" {
+            displayAlert(title: "Missing Information", message: "You must Provide both Email and Password")
+        }else{
+            if let email = emailTextField.text{
+                if let password = passwordTextField.text {
+                    
+                    if signUpMode {
+                        //Sign up mode
+                        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+                            if error != nil {
+                                self.displayAlert(title: "Error", message: error!.localizedDescription)
+                            }else{
+                                //Success Log-IN
+                                print("Sign Up Success!")
+                                 self.performSegue(withIdentifier: "riderSegue", sender: nil)
+                            }
+                        }
+                        
+                    }else{
+                        //Log in mode
+                        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+                            if error != nil {
+                                self.displayAlert(title: "Error", message: error!.localizedDescription)
+                            }else{
+                                //Success Log-IN
+                                print("Log In Success!")
+                                self.performSegue(withIdentifier: "riderSegue", sender: nil)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    func displayAlert(title:String, message:String) {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(action)
+        
+        present(alertController, animated: true, completion: nil)
     }
     
     

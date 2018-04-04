@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		41E80A6FFE959DBF27144421 /* Pods_uberTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72F5927DB84F6507F58D1E0D /* Pods_uberTest.framework */; };
+		6560920320750DEA00594E14 /* RiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6560920220750DEA00594E14 /* RiderViewController.swift */; };
 		65E56E322074919200BE11A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E56E312074919200BE11A9 /* AppDelegate.swift */; };
 		65E56E342074919200BE11A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E56E332074919200BE11A9 /* ViewController.swift */; };
 		65E56E372074919200BE11A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65E56E352074919200BE11A9 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6560920220750DEA00594E14 /* RiderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderViewController.swift; sourceTree = "<group>"; };
 		65E56E2E2074919200BE11A9 /* uberTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uberTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65E56E312074919200BE11A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65E56E332074919200BE11A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			children = (
 				65E56E312074919200BE11A9 /* AppDelegate.swift */,
 				65E56E332074919200BE11A9 /* ViewController.swift */,
+				6560920220750DEA00594E14 /* RiderViewController.swift */,
 				65E56E352074919200BE11A9 /* Main.storyboard */,
 				65E56E382074919400BE11A9 /* Assets.xcassets */,
 				65E56E3A2074919400BE11A9 /* LaunchScreen.storyboard */,
@@ -225,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65E56E342074919200BE11A9 /* ViewController.swift in Sources */,
+				6560920320750DEA00594E14 /* RiderViewController.swift in Sources */,
 				65E56E322074919200BE11A9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,7 +377,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7XK9GN9T8Q;
 				INFOPLIST_FILE = uberTest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.justCodeEnterprise.uberTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -389,7 +396,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7XK9GN9T8Q;
 				INFOPLIST_FILE = uberTest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.justCodeEnterprise.uberTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
