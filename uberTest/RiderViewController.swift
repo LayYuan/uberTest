@@ -33,6 +33,23 @@ class RiderViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
+        //get email
+        if let email = Auth.auth().currentUser?.email{
+            
+            //Retrieve from database
+            Database.database().reference().child("RideRequests").queryOrdered(byChild: "email").queryEqual(toValue: email).observe(.childAdded, with: { (snapshot) in
+                
+                self.uberHasBeenCalled = true
+                self.callAnUber.setTitle("Cancer Uber", for: .normal)
+                
+                //Remove all observer
+                Database.database().reference().child("RideRequests").removeAllObservers()
+            })
+            
+            
+            
+        }
+        
     }
     
     //5
@@ -57,6 +74,10 @@ class RiderViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     @IBAction func logoutTapped(_ sender: Any) {
+        
+        
+        try? Auth.auth().signOut()
+        navigationController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func callAnUberTapped(_ sender: Any) {
